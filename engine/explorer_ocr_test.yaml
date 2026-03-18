@@ -1,0 +1,53 @@
+settings:
+  latency_multiplier: 1.0
+
+steps:
+  - step_id: 1
+    description: "Open File Explorer"
+    action: "Hotkey"
+    keys: ["win", "e"]
+    post_delay_ms: 2000
+
+  - step_id: 2
+    description: "Visually find search bar and type 'david'"
+    action: "Type"
+    image_anchor: "explorer_search.png"
+    offset_x: -50
+    offset_y: 0
+    value: "david"
+    post_delay_ms: 6000
+
+  - step_id: 3
+    description: "Visually Scroll and Find the Hebrew text"
+    action: "ScrollAndFindText"
+    text_anchor: "תלוש"
+    lang: "heb"
+    hover_x: 600        
+    hover_y: 400        
+    scroll_amount: -300 
+    max_scrolls: 15     
+    post_delay_ms: 1000 
+
+  - step_id: 4
+    description: "Copy the located file"
+    action: "Hotkey"
+    keys: ["ctrl", "c"]
+    post_delay_ms: 1000
+
+  - step_id: 5
+    description: "Open Run Dialog for Destination"
+    action: "Hotkey"
+    keys: ["win", "r"]
+    post_delay_ms: 1000
+
+  - step_id: 6
+    description: "Navigate to Destination Folder"
+    action: "PasteText"
+    value: "C:\\test"
+    post_delay_ms: 1500
+
+  - step_id: 7
+    description: "Paste the File"
+    action: "Hotkey"
+    keys: ["ctrl", "v"]
+    post_delay_ms: 2000
