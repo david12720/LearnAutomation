@@ -1,0 +1,74 @@
+settings:
+  latency_multiplier: 1.0
+
+steps:
+  - step_id: 1
+    description: "Ensure WMP is active"
+    action: "ActivateWindow"
+    window_title: "Media Player"
+
+  - step_id: 2
+    description: "Click Music Category"
+    action: "Click"
+    image_anchor: "Music.png"
+    offset_x: 0
+    offset_y: 0
+    post_delay_ms: 1000
+
+  - step_id: 3
+    description: "Search for Artist"
+    action: "Type"
+    image_anchor: "search_anchor.png"
+    offset_x: -130
+    offset_y: 0
+    value: "ישי ריבו"
+    post_delay_ms: 2500
+
+  # - step_id: 4
+  #   description: "Focus Results Pane"
+  #   action: "Click"
+  #   image_anchor: "search_anchor.png"
+  #   offset_x: -730
+  #   offset_y: 74
+  #   post_delay_ms: 500
+
+  - step_id: 5
+    description: "Select All"
+    action: "Hotkey"
+    keys: ["ctrl", "a"]
+    post_delay_ms: 500
+
+  - step_id: 6
+    description: "Open Context Menu"
+    action: "Click"
+    image_anchor: "search_anchor.png"
+    offset_x: -730
+    offset_y: 74
+    button: "right"
+    post_delay_ms: 800
+
+  - step_id: 7
+    description: "Navigate to Add to"
+    action: "KeyPress"
+    key: "down"
+    repeat: 4
+    post_delay_ms: 300
+
+  - step_id: 8
+    description: "Open Submenu"
+    action: "KeyPress"
+    key: "right"
+    post_delay_ms: 300
+
+  - step_id: 9
+    description: "Navigate to Burn List"
+    action: "KeyPress"
+    key: "down"
+    repeat: 1
+    post_delay_ms: 300
+
+  - step_id: 10
+    description: "Execute"
+    action: "KeyPress"
+    key: "enter"
+    post_delay_ms: 500
